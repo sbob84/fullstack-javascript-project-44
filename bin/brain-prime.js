@@ -23,12 +23,12 @@ function IsPrime(number) {
 const user = cli.GetNameAndGreet('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 let j = 0;
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 3; i += 1) {
   const number = Math.floor(Math.random() * 1000);
   const result = IsPrime(number);
   const answer = cli.GetAnswer(`Question: ${number}\nYour answer: `);
   if (cli.Check(result === answer, answer, result, user)) {
-    j++;
+    j += 1;
   } else {
     break;
   }

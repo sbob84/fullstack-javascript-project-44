@@ -5,7 +5,7 @@ import * as cli from '../src/cli.js';
 const user = cli.GetNameAndGreet('What is the result of the expression?');
 
 let j = 0;
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 3; i += 1) {
   const actionsArr = ['+', '-', '*'];
   const action = actionsArr[Math.floor(Math.random() * 3)];
   const valA = Math.floor(Math.random() * 100);
@@ -19,7 +19,7 @@ for (let i = 0; i < 3; i++) {
   }
   const answer = Number(cli.GetAnswer(`Question: ${valA} ${action} ${valB}\nYour answer: `));
   if (cli.Check(answer === result, answer, result, user)) {
-    j++;
+    j += 1;
   } else {
     break;
   }

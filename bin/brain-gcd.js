@@ -12,13 +12,13 @@ function GCD(a, b) {
 const user = cli.GetNameAndGreet('Find the greatest common divisor of given numbers.');
 
 let j = 0;
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 3; i += 1) {
   const valA = Math.floor(Math.random() * 100);
   const valB = Math.floor(Math.random() * 100);
   const result = GCD(valA, valB);
   const answer = Number(cli.GetAnswer(`Question: ${valA} ${valB}\nYour answer: `));
   if (cli.Check(answer === result, answer, result, user)) {
-    j++;
+    j += 1;
   } else {
     break;
   }
