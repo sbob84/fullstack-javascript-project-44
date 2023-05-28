@@ -1,22 +1,18 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-import GetNameAndGreet from '../src/cli.js';
+import * as cli from '../src/cli.js';
 
-console.log('Welcome to the Brain Games!');
-const user = GetNameAndGreet();
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const user = cli.GetNameAndGreet('Answer "yes" if the number is even, otherwise answer "no".');
 
 let j = 0;
 for (let i = 0; i < 3; i++) {
   const number = Math.floor(Math.random() * 100);
-  const correct = number & 0x1 ? 'no' : 'yes';
-  const answer = readlineSync.question(`Question: ${number}\nYour answer: `);
-  if ((number & 0x1) ^ (answer === 'yes')) {
+  const result = number & 0x1 ? 'no' : 'yes';
+  const answer = cli.GetAnswer(`Question: ${number}\nYour answer: `);
+
+  if (cli.Check((number & 0x1) ^ (answer === 'yes'), answer, result, user)) {
     j++;
-    console.log('Correct!');
   } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was ${correct}\nLet's try again, ${user}`);
     break;
   }
 }
