@@ -17,7 +17,7 @@ for (let i = 0; i < 3; i++) {
     case '*': result = valA * valB; break;
     default: result = 0; break;
   }
-  const answer = Number(cli.GetAnswer(`Question: ${valA}${action}${valB}\nYour answer: `));
+  const answer = Number(cli.GetAnswer(`Question: ${valA} ${action} ${valB}\nYour answer: `));
   if (cli.Check(answer === result, answer, result, user)) {
     j++;
   } else {
