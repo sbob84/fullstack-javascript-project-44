@@ -15,6 +15,6 @@ export function Check(condition, answer, result, user) {
     console.log('Correct!');
     return true;
   }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was ${result}\nLet's try again, ${user}`);
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was ${result}\nLet's try again, ${user}!`);
   return false;
 }
