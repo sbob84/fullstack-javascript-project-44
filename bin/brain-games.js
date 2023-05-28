@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import GetNameAndGreet from '../src/cli.js';
+import * as cli from '../src/cli.js';
 
-GetNameAndGreet('');
+cli.GetNameAndGreet('');
