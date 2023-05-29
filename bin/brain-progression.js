@@ -10,7 +10,7 @@ for (let i = 0; i < 3; i += 1) {
   const progression = [Math.floor(Math.random() * 30)];
   const iterations = 5 + Math.floor(Math.random() * 10);
   const hiddenNumIdx = Math.floor(Math.random() * iterations);
-  for (let k = 1; k < iterations; k++) {
+  for (let k = 1; k < iterations; k += 1) {
     progression[k] = progression[k - 1] + magnifier;
   }
   const questionArr = [...progression];
